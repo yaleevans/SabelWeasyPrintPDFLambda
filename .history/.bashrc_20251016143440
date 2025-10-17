@@ -18,8 +18,7 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-if [ -d ~/.bashrc.d ];
-then
+if [ -d ~/.bashrc.d ]; then
 	for rc in ~/.bashrc.d/*; do
 		if [ -f "$rc" ]; then
 			. "$rc"
@@ -32,13 +31,7 @@ complete -C '/usr/local/bin/aws_completer' aws
 export PS1='\W $ '
 alias dynamodb-local='java -jar /opt/dynamodb-local/DynamoDBLocal.jar'
 
-# ==========================================================
-# CUSTOM ALIAS: Pull latest code and run deployment script
-# ==========================================================
-alias deploy-update='git pull && ./deploy.sh'
-
-# Amazon Q post block.
-Keep at the bottom of this file.
+# Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/.local/share/amazon-q/shell/bashrc.post.bash" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/bashrc.post.bash"
 unset AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE
 unset __MDE_ENV_API_AUTHORIZATION_TOKEN_FILE

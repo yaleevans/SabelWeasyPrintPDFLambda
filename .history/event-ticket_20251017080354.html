@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Official Guest Ticket</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif; /* Common for official documents */
+            background-color: white; /* This will be overridden by Lambda's background_color */
+        }
+        .ticket-container {
+            border: 4px solid black; /* Outer black border */
+            padding: 20px;
+            margin: 20px; /* Space around the outer border */
+            text-align: center;
+            color: black; /* Default text color for the template */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            height: calc(100vh - 40px); /* Fill most of the viewport height */
+            position: relative;
+        }
+        .inner-border {
+            border: 2px solid red; /* Inner red border */
+            padding: 15px;
+            height: calc(100% - 30px); /* Adjust for padding */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribute content vertically */
+            align-items: center;
+        }
+        .header {
+            width: 100%;
+            text-align: right;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .content {
+            flex-grow: 1; /* Allows this section to take up available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center;
+            width: 100%;
+        }
+        .guest-name {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: red; /* Variable color for visibility, adjust as needed */
+        }
+        .guest-name-label {
+            font-size: 0.8em;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .ticket-title {
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            color: black;
+        }
+        .ship-name {
+            font-size: 1.8em;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .commissioning-text {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: black;
+        }
+        .location {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: red; /* Variable color for visibility */
+        }
+        .datetime {
+            font-size: 1.6em;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: red; /* Variable color for visibility */
+        }
+        .instructions {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: black;
+        }
+        .transfer-info {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: black;
+        }
+        .waiver-text {
+            font-size: 1.2em;
+            font-style: italic;
+            font-weight: bold;
+            color: red; /* Variable color for visibility */
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        <div class="inner-border">
+            <div class="header">
+                { rin }
+            </div>
+            <div class="content">
+                <div class="guest-name">{ guestFirstNameLastName }</div>
+                <div class="guest-name-label">First/Last Name</div>
+                
+                <div class="ticket-title">OFFICIAL GUEST TICKET</div>
+                <div class="ship-name">{ shipName }</div>
+                
+                <div class="commissioning-text">Commissioning Ceremony</div>
+                
+                <div class="location">{ location }</div>
+                <div class="datetime">{ eventDateTime }</div>
+                
+                <div class="instructions">Please present this card for { seatingSection } seating section</div>
+                <div class="transfer-info">Tickets are non-transferable</div>
+            </div>
+            <div class="waiver-text">
+                { liabilityStatement }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Official Guest Ticket</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: white; 
+        }
+        .ticket-container {
+            border: 4px solid black; 
+            padding: 20px;
+            margin: 20px; 
+            text-align: center;
+            color: black;
+            box-sizing: border-box;
+            height: calc(100vh - 40px);
+            position: relative; /* KEY: Reference point for absolute positioning */
+        }
+        .inner-border {
+            border: 2px solid red; 
+            padding: 15px;
+            height: calc(100% - 30px);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            align-items: center;
+        }
+        /* --- NEW CSS FOR OVERLAY --- */
+        .ticket-number-overlay {
+            position: absolute; /* KEY: Positions relative to .ticket-container */
+            top: 5px;             /* Distance from the top border of .ticket-container */
+            right: 25px;          /* Distance from the right border of .ticket-container */
+            padding: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: red; /* Make it stand out */
+            background-color: transparent; /* Ensure it doesn't block background color */
+            z-index: 10; /* Ensure it floats above the content */
+        }
+        /* --- EXISTING CSS REMAINS THE SAME --- */
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .guest-name {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: red;
+        }
+        .guest-name-label {
+            font-size: 0.8em;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .ticket-title {
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            color: black;
+        }
+        .ship-name {
+            font-size: 1.8em;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .commissioning-text {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: black;
+        }
+        .location {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: red;
+        }
+        .datetime {
+            font-size: 1.6em;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: red;
+        }
+        .instructions {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: black;
+        }
+        .transfer-info {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: black;
+        }
+        .waiver-text {
+            font-size: 1.2em;
+            font-style: italic;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        
+        <div class="ticket-number-overlay">
+            { ticketNumber }
+        </div>
+        
+        <div class="inner-border">
+            <div class="content">
+                <div class="guest-name">{ guestFirstNameLastName }</div>
+                <div class="guest-name-label">First/Last Name</div>
+                
+                <div class="ticket-title">OFFICIAL GUEST TICKET</div>
+                <div class="ship-name">{ shipName }</div>
+                
+                <div class="commissioning-text">Commissioning Ceremony</div>
+                
+                <div class="location">{ location }</div>
+                <div class="datetime">{ eventDateTime }</div>
+                
+                <div class="instructions">Please present this card for { seatingSection } seating section</div>
+                <div class="transfer-info">Tickets are non-transferable</div>
+            </div>
+            <div class="waiver-text">
+                { waiverInformation }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

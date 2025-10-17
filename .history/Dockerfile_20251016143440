@@ -5,13 +5,13 @@ FROM public.ecr.aws/lambda/python:3.12
 # We use dnf (Amazon Linux 2023) to get these packages.
 # --nodocs reduces the final image size.
 RUN dnf install -y \
-	cairo-devel \
-	pango-devel \
-	gdk-pixbuf2-devel \
-	libffi-devel \
-	# Clean up dnf cache to keep the image small
-	&& dnf clean all \
-	&& rm -rf /var/cache/dnf
+    cairo-devel \
+        pango-devel \
+	    gdk-pixbuf2-devel \
+	        libffi-devel \
+		    # Clean up dnf cache to keep the image small
+		        && dnf clean all \
+			    && rm -rf /var/cache/dnf
 
 # Copy your Python application code into the container
 COPY lambda_function.py ${LAMBDA_TASK_ROOT}
