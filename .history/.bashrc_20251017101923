@@ -32,7 +32,7 @@ export PS1='\W $ '
 alias dynamodb-local='java -jar /opt/dynamodb-local/DynamoDBLocal.jar'
 
 # --- Custom Aliases for Project Templates ---
-alias deploy-update='git pull && ./deploy.sh'
+
 # Alias to copy the local 'event_ticket_template.html' to the correct S3 location.
 # IMPORTANT: Replace 'caps-event-tickets' below if your S3 bucket name is different.
 alias upet='S3_BUCKET="caps-event-tickets"; TEMPLATE_FILE="event_ticket_template.html"; S3_KEY="templates/${TEMPLATE_FILE}"; aws s3 cp ${TEMPLATE_FILE} s3://${S3_BUCKET}/${S3_KEY} --content-type text/html && echo \"✅ Template ${TEMPLATE_FILE} successfully updated in s3://${S3_BUCKET}/${S3_KEY}\"'
