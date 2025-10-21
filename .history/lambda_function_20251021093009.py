@@ -88,12 +88,6 @@ def lambda_handler(event, context):
         # --- 4. Dynamic Variable Replacement ---
         DATA_MAPPING["background_color"] = BACKGROUND_COLOR
         DATA_MAPPING['font_color'] = FONT_COLOR
-        # Use .pop() to extract it and remove it from the main substitutions list if found.
-        breakfast_required = DATA_MAPPING.pop('breakfast', False)
-         # If breakfast_required is True, set the substitution to 'B', otherwise set it to an empty string ''
-        # We add this new indicator to the substitution dictionary.
-        DATA_MAPPING['breakfast_indicator'] = 'B' if breakfast_required else ''
-
         logger.info(
             f"BACKGROUND_COLOR: {BACKGROUND_COLOR}"
         )
